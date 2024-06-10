@@ -1,3 +1,6 @@
+import unittest
+
+
 class Solution:
     """
     Use dynamic approach
@@ -41,22 +44,27 @@ class Solution:
         return max_result
 
 
+# ===============================================================
+# TESTS
+# ===============================================================
+class TestSolution(unittest.TestCase):
+
+    def test_grid_positive_sum(self):
+        grid = [
+            [9, 5, 7, 3],
+            [8, 9, 6, 1],
+            [6, 7, 14, 3],
+            [2, 5, 3, 1]
+        ]
+        self.assertEquals(9, Solution().maxScore(grid))
+
+    def test_grid_negative_sum(self):
+        grid = [
+            [4, 3, 2],
+            [3, 2, 1]
+        ]
+        self.assertEquals(-1, Solution().maxScore(grid))
+
+
 if __name__ == "__main__":
-    # expected 9
-    grid = [
-        [9, 5, 7, 3],
-        [8, 9, 6, 1],
-        [6, 7, 14, 3],
-        [2, 5, 3, 1]
-    ]
-
-    # expected: -1
-    # grid = [
-    #     [4, 3, 2],
-    #     [3, 2, 1]
-    # ]
-
-    max_res = Solution().maxScore(grid)
-
-    print(f"max_res = {max_res}")
-    print("maximum-difference-score-in-a-grid main done")
+    unittest.main()

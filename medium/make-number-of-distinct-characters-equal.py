@@ -1,3 +1,5 @@
+import unittest
+
 """
 2531. Make Number of Distinct Characters Equal
 https://leetcode.com/problems/make-number-of-distinct-characters-equal/
@@ -81,9 +83,13 @@ class Solution:
             raise Exception(f"None value detected: {error_msg}")
 
 
-if __name__ == "__main__":
-    word1 = "abcde"
-    word2 = "fghij"
+# ===============================================================
+# TESTS
+# ===============================================================
+class TestSolution(unittest.TestCase):
+    def test_is_it_possible(self):
+        self.assertTrue(Solution().isItPossible("abcde", "fghij"))
 
-    result = Solution().isItPossible(word1, word2)
-    print(f"result: {result}")
+
+if __name__ == "__main__":
+    unittest.main()
