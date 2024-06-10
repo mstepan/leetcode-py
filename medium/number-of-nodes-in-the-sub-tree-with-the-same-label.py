@@ -10,26 +10,7 @@ class Node:
     def __init__(self, index: int, label: chr):
         self.index = index
         self.label = label
-        self.left = None
-        self.right = None
-
-    def get_index(self):
-        return self.index
-
-    def get_label(self):
-        return self.label
-
-    def get_left(self):
-        return self.left
-
-    def set_left(self, left):
-        self.left = left
-
-    def get_right(self):
-        return self.right
-
-    def set_right(self, right):
-        self.right = right
+        self.children = []
 
     def __str__(self):
         return f"{self.index}: {self.label}"
@@ -55,50 +36,46 @@ class Solution:
     @staticmethod
     def build_tree(all_nodes: list[Node], edges: list[list[int]]) -> Node:
 
+        linked_nodes: set[int] = set()
+        linked_nodes.add(0)
+
         for single_edge in edges:
+
             parent: Node = all_nodes[single_edge[0]]
             child: Node = all_nodes[single_edge[1]]
 
-            if parent.get_left() is None:
-                parent.set_left(child)
-            else:
-                parent.set_right(child)
+            if parent.index not in linked_nodes:
+                parent, child = child, parent
+
+            parent.children.append(child)
+
+            linked_nodes.add(parent.index)
+            linked_nodes.add(child.index)
 
         return all_nodes[0]
 
     @staticmethod
     def count_subtrees_rec(cur_node: Node, results: list[int]) -> dict[chr, int]:
-        left_labels = {}
-        if cur_node.get_left() is not None:
-            left_labels = Solution.count_subtrees_rec(cur_node.get_left(), results)
 
-        right_labels = {}
-        if cur_node.get_right() is not None:
-            right_labels = Solution.count_subtrees_rec(cur_node.get_right(), results)
+        combined_labels = {cur_node.label: 1}
 
-        cur_idx: int = cur_node.get_index()
-        cur_label: chr = cur_node.get_label()
+        for cur_child in cur_node.children:
+            child_labels = Solution.count_subtrees_rec(cur_child, results)
+            combined_labels = Solution.merge(combined_labels, child_labels)
 
-        combined_labels = Solution.merge(left_labels, right_labels, cur_label)
-
-        results[cur_idx] = combined_labels[cur_label]
+        results[cur_node.index] = combined_labels[cur_node.label]
 
         return combined_labels
 
     @staticmethod
-    def merge(left: dict[chr, int], right: dict[chr, int], cur_label: chr) -> dict[chr, int]:
-        combined = left.copy()
+    def merge(first: dict[chr, int], second: dict[chr, int]) -> dict[chr, int]:
+        combined = first.copy()
 
-        for key, value in right.items():
+        for key, value in second.items():
             if key in combined:
                 combined[key] += value
             else:
                 combined[key] = value
-
-        if cur_label in combined:
-            combined[cur_label] += 1
-        else:
-            combined[cur_label] = 1
 
         return combined
 
@@ -108,7 +85,7 @@ class Solution:
 # ===============================================================
 class TestSolution(unittest.TestCase):
     """
-    Do post-order tree traversal (left-right-parent) and count unique labels using set.
+    Do post-order tree traversal (all children -> parent) and count unique labels using dictionary.
     time: O(N)
     space: O(h), could be O(N) in worst case
     """
@@ -130,6 +107,12 @@ class TestSolution(unittest.TestCase):
                           Solution().countSubTrees(5,
                                                    [[0, 1], [0, 2], [1, 3], [0, 4]],
                                                    "aabab"))
+
+    def test_count_sub_trees_with_shuffled_edges(self):
+        self.assertEquals([1, 1, 2, 1],
+                          Solution().countSubTrees(4,
+                                                   [[0, 2], [0, 3], [1, 2]],
+                                                   "aeed"))
 
     def test_count_sub_trees_single_node(self):
         self.assertEquals([1], Solution().countSubTrees(1, [], "a"))
