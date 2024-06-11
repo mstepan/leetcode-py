@@ -18,7 +18,7 @@ class Solution:
 
         cols = len(grid[0])
 
-        max_result = float('-inf')
+        max_result = float("-inf")
 
         sol = [[0 for _ in row] for row in grid]
 
@@ -28,15 +28,19 @@ class Solution:
                 if row == 0 and col == 0:
                     continue
 
-                max_cur = float('-inf')
+                max_cur = float("-inf")
 
                 # check all to the left, row wize
                 for i in range(col):
-                    max_cur = max(max_cur, grid[row][col] - grid[row][i] + max(sol[row][i], 0))
+                    max_cur = max(
+                        max_cur, grid[row][col] - grid[row][i] + max(sol[row][i], 0)
+                    )
 
                 # check all to the top, column wize
                 for i in range(row):
-                    max_cur = max(max_cur, grid[row][col] - grid[i][col] + max(sol[i][col], 0))
+                    max_cur = max(
+                        max_cur, grid[row][col] - grid[i][col] + max(sol[i][col], 0)
+                    )
 
                 sol[row][col] = max_cur
                 max_result = max(max_result, max_cur)
@@ -50,19 +54,11 @@ class Solution:
 class TestSolution(unittest.TestCase):
 
     def test_grid_positive_sum(self):
-        grid = [
-            [9, 5, 7, 3],
-            [8, 9, 6, 1],
-            [6, 7, 14, 3],
-            [2, 5, 3, 1]
-        ]
+        grid = [[9, 5, 7, 3], [8, 9, 6, 1], [6, 7, 14, 3], [2, 5, 3, 1]]
         self.assertEquals(9, Solution().maxScore(grid))
 
     def test_grid_negative_sum(self):
-        grid = [
-            [4, 3, 2],
-            [3, 2, 1]
-        ]
+        grid = [[4, 3, 2], [3, 2, 1]]
         self.assertEquals(-1, Solution().maxScore(grid))
 
 

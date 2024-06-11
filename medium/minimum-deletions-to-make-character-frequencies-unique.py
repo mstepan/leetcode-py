@@ -30,7 +30,7 @@ class Solution:
             freq = values[i]
 
             if freq >= max_freq:
-                del_cnt += (freq - max_freq)
+                del_cnt += freq - max_freq
             else:
                 max_freq = freq
 

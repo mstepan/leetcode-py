@@ -23,7 +23,9 @@ class Solution:
         if n == 1:
             return [1]
 
-        all_nodes: list[Node] = [Node(idx, node_label) for idx, node_label in enumerate(labels)]
+        all_nodes: list[Node] = [
+            Node(idx, node_label) for idx, node_label in enumerate(labels)
+        ]
 
         tree: Node = Solution.build_tree(all_nodes, edges)
 
@@ -91,28 +93,28 @@ class TestSolution(unittest.TestCase):
     """
 
     def test_count_sub_trees1(self):
-        self.assertEquals([2, 1, 1, 1, 1, 1, 1],
-                          Solution().countSubTrees(7,
-                                                   [[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]],
-                                                   "abaedcd"))
+        self.assertEquals(
+            [2, 1, 1, 1, 1, 1, 1],
+            Solution().countSubTrees(
+                7, [[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]], "abaedcd"
+            ),
+        )
 
     def test_count_sub_trees2(self):
-        self.assertEquals([4, 2, 1, 1],
-                          Solution().countSubTrees(4,
-                                                   [[0, 1], [1, 2], [0, 3]],
-                                                   "bbbb"))
+        self.assertEquals(
+            [4, 2, 1, 1], Solution().countSubTrees(4, [[0, 1], [1, 2], [0, 3]], "bbbb")
+        )
 
     def test_count_sub_trees3(self):
-        self.assertEquals([3, 2, 1, 1, 1],
-                          Solution().countSubTrees(5,
-                                                   [[0, 1], [0, 2], [1, 3], [0, 4]],
-                                                   "aabab"))
+        self.assertEquals(
+            [3, 2, 1, 1, 1],
+            Solution().countSubTrees(5, [[0, 1], [0, 2], [1, 3], [0, 4]], "aabab"),
+        )
 
     def test_count_sub_trees_with_shuffled_edges(self):
-        self.assertEquals([1, 1, 2, 1],
-                          Solution().countSubTrees(4,
-                                                   [[0, 2], [0, 3], [1, 2]],
-                                                   "aeed"))
+        self.assertEquals(
+            [1, 1, 2, 1], Solution().countSubTrees(4, [[0, 2], [0, 3], [1, 2]], "aeed")
+        )
 
     def test_count_sub_trees_single_node(self):
         self.assertEquals([1], Solution().countSubTrees(1, [], "a"))
