@@ -2,6 +2,16 @@
 
 All solved tasks located inside `medium` package.
 
+
+### Python version and virtual environment
+
+We will use python 3.11.x for all code.
+
+To install virtual environment use:
+```bash
+python3.11 -m venv .venv/
+```
+
 ### Dependency Management
 
 We will use virtual environment to install all required dependencies.
