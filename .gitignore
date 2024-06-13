@@ -1,2 +1,8 @@
 # Pycharm files
 .idea
+
+# Coverage tool
+.coverage
+
+# Python cache files
+**/*.pyc
