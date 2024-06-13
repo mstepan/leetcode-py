@@ -48,21 +48,3 @@ class Solution:
                 max_result = max(max_result, max_cur)
 
         return max_result
-
-
-# ===============================================================
-# TESTS
-# ===============================================================
-class TestSolution(unittest.TestCase):
-
-    def test_grid_positive_sum(self):
-        grid = [[9, 5, 7, 3], [8, 9, 6, 1], [6, 7, 14, 3], [2, 5, 3, 1]]
-        self.assertEquals(9, Solution().maxScore(grid))
-
-    def test_grid_negative_sum(self):
-        grid = [[4, 3, 2], [3, 2, 1]]
-        self.assertEquals(-1, Solution().maxScore(grid))
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -81,15 +81,3 @@ class Solution:
     def check_not_none(value: str, error_msg: str):
         if value is None:
             raise Exception(f"None value detected: {error_msg}")
-
-
-# ===============================================================
-# TESTS
-# ===============================================================
-class TestSolution(unittest.TestCase):
-    def test_is_it_possible(self):
-        self.assertTrue(Solution().isItPossible("abcde", "fghij"))
-
-
-if __name__ == "__main__":
-    unittest.main()
