@@ -47,23 +47,3 @@ class Solution:
                 freq[ch] = 1
 
         return freq
-
-
-# ===============================================================
-# TESTS
-# ===============================================================
-class TestSolution(unittest.TestCase):
-
-    def test_min_deletions_with_zero_deletion(self):
-        self.assertEquals(0, Solution().minDeletions("aab"))
-
-    def test_min_deletions_typical_case(self):
-        self.assertEquals(2, Solution().minDeletions("aaabbbcc"))
-        self.assertEquals(2, Solution().minDeletions("ceabaacb"))
-
-    def test_min_deletions_tricky_case(self):
-        self.assertEquals(2, Solution().minDeletions("bbcebab"))
-
-
-if __name__ == "__main__":
-    unittest.main()

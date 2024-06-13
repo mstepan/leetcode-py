@@ -32,7 +32,7 @@ pip freeze > requirements.txt
 
 To format current folder use:
 ```bash
-black --line-length 79 .
+black --line-length 120 .
 ```
 
 ### Linter
@@ -44,3 +44,6 @@ To run linter use:
 ```bash
 flake8 medium/
 ```
+
+### Unit tests
+For unit tests we will use [pytest](https://docs.pytest.org/en/8.2.x/)

@@ -35,9 +35,7 @@ class Solution:
 # ===============================================================
 class TestSolution(unittest.TestCase):
     def test_max_score_sightseeing_pair(self):
-        self.assertEquals(
-            11, Solution().maxScoreSightseeingPair([8, 1, 5, 2, 6])
-        )
+        self.assertEquals(11, Solution().maxScoreSightseeingPair([8, 1, 5, 2, 6]))
         self.assertEquals(2, Solution().maxScoreSightseeingPair([1, 2]))
 
     def test_max_score_sightseeing_pair_single_element_array(self):
