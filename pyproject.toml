@@ -1,7 +1,20 @@
-[tool.pytest.ini_options]
-pythonpath = [
-    "src"
+[project]
+name = "leetcode-py"
+version = "0.0.1"
+description = "Leetcode solutions in python 3"
+requires-python = ">= 3.11"
+authors = [
+    { name = "Maksym Stepanenko", email = "" },
 ]
+readme = "README.md"
+license = { text = "MIT License" }
+keywords = ["leetcode", "python", "algorithms"]
+
+[project.urls]
+Repository = "https://github.com/mstepan/leetcode-py"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [tool.coverage.run]
 branch = true
