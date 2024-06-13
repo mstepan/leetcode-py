@@ -1,4 +1,12 @@
 [tool.pytest.ini_options]
 pythonpath = [
-  "src"
+    "src"
 ]
+
+[tool.coverage.run]
+branch = true
+include = ["src/*"]
+command_line = "-m pytest -s test/"
+
+[tool.coverage.report]
+fail_under = 81

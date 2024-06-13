@@ -62,6 +62,12 @@ flake8 medium/
 
 For unit tests we will use [pytest](https://docs.pytest.org/en/8.2.x/)
 
+To run all unit-tests execute:
+
+```bash
+pytest
+```
+
 ### Code Coverage
 
 For code coverage we will use [coverage]().
