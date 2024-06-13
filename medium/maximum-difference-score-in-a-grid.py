@@ -33,13 +33,15 @@ class Solution:
                 # check all to the left, row wize
                 for i in range(col):
                     max_cur = max(
-                        max_cur, grid[row][col] - grid[row][i] + max(sol[row][i], 0)
+                        max_cur,
+                        grid[row][col] - grid[row][i] + max(sol[row][i], 0),
                     )
 
                 # check all to the top, column wize
                 for i in range(row):
                     max_cur = max(
-                        max_cur, grid[row][col] - grid[i][col] + max(sol[i][col], 0)
+                        max_cur,
+                        grid[row][col] - grid[i][col] + max(sol[i][col], 0),
                     )
 
                 sol[row][col] = max_cur

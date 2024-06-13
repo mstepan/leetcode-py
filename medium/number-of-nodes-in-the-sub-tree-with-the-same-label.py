@@ -17,7 +17,9 @@ class Node:
 
 
 class Solution:
-    def countSubTrees(self, n: int, edges: list[list[int]], labels: str) -> list[int]:
+    def countSubTrees(
+        self, n: int, edges: list[list[int]], labels: str
+    ) -> list[int]:
         if n == 0:
             return []
         if n == 1:
@@ -57,7 +59,9 @@ class Solution:
         return all_nodes[0]
 
     @staticmethod
-    def count_subtrees_rec(cur_node: Node, results: list[int]) -> dict[chr, int]:
+    def count_subtrees_rec(
+        cur_node: Node, results: list[int]
+    ) -> dict[chr, int]:
 
         combined_labels = {cur_node.label: 1}
 
@@ -87,7 +91,8 @@ class Solution:
 # ===============================================================
 class TestSolution(unittest.TestCase):
     """
-    Do post-order tree traversal (all children -> parent) and count unique labels using dictionary.
+    Do post-order tree traversal (all children -> parent) and count unique
+    labels using dictionary.
     time: O(N)
     space: O(h), could be O(N) in worst case
     """
@@ -102,18 +107,22 @@ class TestSolution(unittest.TestCase):
 
     def test_count_sub_trees2(self):
         self.assertEquals(
-            [4, 2, 1, 1], Solution().countSubTrees(4, [[0, 1], [1, 2], [0, 3]], "bbbb")
+            [4, 2, 1, 1],
+            Solution().countSubTrees(4, [[0, 1], [1, 2], [0, 3]], "bbbb"),
         )
 
     def test_count_sub_trees3(self):
         self.assertEquals(
             [3, 2, 1, 1, 1],
-            Solution().countSubTrees(5, [[0, 1], [0, 2], [1, 3], [0, 4]], "aabab"),
+            Solution().countSubTrees(
+                5, [[0, 1], [0, 2], [1, 3], [0, 4]], "aabab"
+            ),
         )
 
     def test_count_sub_trees_with_shuffled_edges(self):
         self.assertEquals(
-            [1, 1, 2, 1], Solution().countSubTrees(4, [[0, 2], [0, 3], [1, 2]], "aeed")
+            [1, 1, 2, 1],
+            Solution().countSubTrees(4, [[0, 2], [0, 3], [1, 2]], "aeed"),
         )
 
     def test_count_sub_trees_single_node(self):

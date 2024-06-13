@@ -32,7 +32,7 @@ pip freeze > requirements.txt
 
 To format current folder use:
 ```bash
-black .
+black --line-length 79 .
 ```
 
 ### Linter
