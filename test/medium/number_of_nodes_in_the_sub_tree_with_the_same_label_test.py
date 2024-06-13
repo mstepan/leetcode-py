@@ -8,9 +8,7 @@ class TestSolution:
     cur = Solution()
 
     def test_count_sub_trees1(self):
-        assert self.cur.countSubTrees(
-            7, [[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]], "abaedcd"
-        ) == [
+        assert self.cur.countSubTrees(7, [[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]], "abaedcd") == [
             2,
             1,
             1,

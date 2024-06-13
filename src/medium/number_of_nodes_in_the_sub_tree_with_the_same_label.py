@@ -1,5 +1,3 @@
-import unittest
-
 """
 1519. Number of Nodes in the Sub-Tree With the Same Label
 https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
@@ -30,9 +28,7 @@ class Solution:
         if n == 1:
             return [1]
 
-        all_nodes: list[Node] = [
-            Node(idx, node_label) for idx, node_label in enumerate(labels)
-        ]
+        all_nodes: list[Node] = [Node(idx, node_label) for idx, node_label in enumerate(labels)]
 
         tree: Node = Solution.build_tree(all_nodes, edges)
 
