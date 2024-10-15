@@ -1,11 +1,18 @@
-# Pycharm files
-.idea
+# PyCharm files
+.idea/
 
-# Coverage tool
+# Virtual environment
+.venv/
+
+# Python cache
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Code coverage files
+htmlcov/
 .coverage
 
-# Python cache files
-**/*.pyc
-
-# Ignore virtual environments
-.venv
+dist/
+build/
+*.egg-info/
