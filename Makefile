@@ -35,7 +35,7 @@ activate:
 # Code formatting using black
 .PHONY: code_format
 code_format: activate
-	$(PYTHON) -m black $(SRC)
+	$(PYTHON) -m black $(SRC) $(TESTS)
 
 # Execute flake8 linter
 lint: activate
