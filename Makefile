@@ -22,6 +22,11 @@ create_venv:
 install_dependencies: create_venv
 	$(PIP) install -r requirements.txt
 
+# Freeze PIP dependencies
+.PHONY: freeze
+freeze: activate
+	$(PIP) freeze >  requirements.txt
+
 # Activate virtual environment
 .PHONY: activate
 activate:
