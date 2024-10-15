@@ -1,4 +1,4 @@
-from medium.shortest_string_that_contains_three_strings import Solution
+from leetcode.medium.shortest_string_that_contains_three_strings import Solution
 import pytest
 import sys
 

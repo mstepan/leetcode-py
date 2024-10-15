@@ -1,4 +1,4 @@
-from medium.make_number_of_distinct_characters_equal import Solution
+from leetcode.medium.make_number_of_distinct_characters_equal import Solution
 
 import pytest
 import sys

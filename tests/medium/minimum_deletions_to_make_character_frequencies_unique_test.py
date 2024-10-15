@@ -1,4 +1,4 @@
-from medium.minimum_deletions_to_make_character_frequencies_unique import Solution
+from leetcode.medium.minimum_deletions_to_make_character_frequencies_unique import Solution
 
 import pytest
 import sys

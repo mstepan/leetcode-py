@@ -3,6 +3,7 @@
 https://leetcode.com/problems/make-array-empty/
 # TODO: TLE: 505 / 514 testcases passed
 """
+
 from collections import deque
 
 
@@ -95,7 +96,7 @@ def count_decimal_digits(value: int) -> int:
 
 
 def digit(value: int, idx: int) -> int:
-    return abs(value) // int(10 ** idx) % 10
+    return abs(value) // int(10**idx) % 10
 
 
 def counting_sort(digit_idx: int, data: list[int], left: int, right: int):
@@ -104,12 +105,12 @@ def counting_sort(digit_idx: int, data: list[int], left: int, right: int):
     """
     counter_table = [0 for _ in range(10)]
 
-    for value in data[left:right + 1]:
+    for value in data[left : right + 1]:
         counter_table[digit(value, digit_idx)] += 1
 
     prefix_sum(counter_table)
 
-    data_chunk_copy = data[left:right + 1]
+    data_chunk_copy = data[left : right + 1]
 
     for val in reversed(data_chunk_copy):
         digit_value = digit(val, digit_idx)

@@ -28,7 +28,9 @@ class Solution:
         if n == 1:
             return [1]
 
-        all_nodes: list[Node] = [Node(idx, node_label) for idx, node_label in enumerate(labels)]
+        all_nodes: list[Node] = [
+            Node(idx, node_label) for idx, node_label in enumerate(labels)
+        ]
 
         tree: Node = Solution.build_tree(all_nodes, edges)
 

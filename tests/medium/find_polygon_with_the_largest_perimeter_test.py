@@ -1,4 +1,4 @@
-from medium.find_polygon_with_the_largest_perimeter import Solution
+from leetcode.medium.find_polygon_with_the_largest_perimeter import Solution
 import pytest
 import sys
 

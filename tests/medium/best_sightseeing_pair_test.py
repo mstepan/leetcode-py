@@ -1,4 +1,4 @@
-from medium.best_sightseeing_pair import Solution
+from leetcode.medium.best_sightseeing_pair import Solution
 import pytest
 import sys
 

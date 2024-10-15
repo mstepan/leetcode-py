@@ -30,7 +30,7 @@ class Solution:
         res = a + b
 
         for length_to_check in range(1, min_len + 1):
-            a_suffix = a[len(a) - length_to_check:]
+            a_suffix = a[len(a) - length_to_check :]
             b_prefix = b[0:length_to_check]
 
             if a_suffix == b_prefix:

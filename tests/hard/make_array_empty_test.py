@@ -1,6 +1,6 @@
 import time
 
-from hard.make_array_empty import Solution, digit, counting_sort, radix_sort
+from leetcode.hard.make_array_empty import Solution, digit, counting_sort, radix_sort
 import pytest
 import sys
 

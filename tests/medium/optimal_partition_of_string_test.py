@@ -1,4 +1,4 @@
-from medium.optimal_partition_of_string import Solution
+from leetcode.medium.optimal_partition_of_string import Solution
 import pytest
 import sys
 

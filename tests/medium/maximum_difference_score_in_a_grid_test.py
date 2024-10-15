@@ -1,4 +1,4 @@
-from medium.maximum_difference_score_in_a_grid import Solution
+from leetcode.medium.maximum_difference_score_in_a_grid import Solution
 
 import pytest
 import sys

@@ -1,4 +1,4 @@
-from medium.powerful_integers import Solution
+from leetcode.medium.powerful_integers import Solution
 import pytest
 import sys
 

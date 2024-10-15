@@ -1,4 +1,4 @@
-from hard.number_of_beautiful_integers_in_the_range import Solution
+from leetcode.hard.number_of_beautiful_integers_in_the_range import Solution
 import pytest
 import sys
 
@@ -12,7 +12,7 @@ class TestSolution:
     def test_number_of_beautiful_integers2(self):
         assert self.cur.numberOfBeautifulIntegers(36, 60, 3) == 3
 
-    @pytest.mark.skip(reason="This test consume a lot of time, so skipped till algorithm will be fixed")
+    @pytest.mark.skip(reason="This tests consume a lot of time, so skipped till algorithm will be fixed")
     def test_number_of_beautiful_integers_big_range(self):
         assert self.cur.numberOfBeautifulIntegers(349_863_935, 772_153_463, 11) == 0
 

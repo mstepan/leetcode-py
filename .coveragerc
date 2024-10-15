@@ -1,0 +1,5 @@
+[run]
+source = leetcode
+
+[report]
+omit = tests/*

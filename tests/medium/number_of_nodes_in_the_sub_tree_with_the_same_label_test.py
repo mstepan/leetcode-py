@@ -1,4 +1,4 @@
-from medium.number_of_nodes_in_the_sub_tree_with_the_same_label import Solution
+from leetcode.medium.number_of_nodes_in_the_sub_tree_with_the_same_label import Solution
 import pytest
 import sys
 
