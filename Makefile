@@ -15,7 +15,7 @@ setup: create_venv install_dependencies
 # Create virtual environment
 .PHONY: create_venv
 create_venv:
-	python3 -m venv $(VENV_DIR)
+	python3.11 -m venv $(VENV_DIR)
 
 # Install dependencies from requirements.txt
 .PHONY: install_dependencies

@@ -1,33 +1,15 @@
-# Leetcode solution using Python 3
+# Leetcode solution using Python 3.11
 
 All solved tasks located inside `medium` package.
 
-
 ### Python version and virtual environment
 
-We will use python 3.11.x for all code.
+We will use python 3.11.x for all our code.
 
-To install virtual environment use:
-```bash
-python3.11 -m venv .venv/
-```
-
-### Dependency Management
-
-We will use virtual environment to install all required dependencies.
-
-#### To install all required dependencies do the following:
-
-1. Active python virtual environment.
+To create virtual environment with all the dependencies use:
 
 ```bash
-source .venv/bin/activate
-```
-
-2. Install all dependencies using `pip`
-
-```bash
-pip install -r requirements.txt
+make setup
 ```
 
 #### Freeze dependencies
@@ -35,7 +17,7 @@ pip install -r requirements.txt
 Run the following command to freeze all dependencies:
 
 ```bash
-pip freeze > requirements.txt
+make freeze
 ```
 
 ### Code Formatter
@@ -45,7 +27,7 @@ pip freeze > requirements.txt
 To format current folder use:
 
 ```bash
-black --line-length 127 leetcode test
+make code_format
 ```
 
 ### Linter
@@ -55,34 +37,16 @@ As a linter we will use [Flake8](https://flake8.pycqa.org/en/latest/)
 To run linter use:
 
 ```bash
-flake8 leetcode --count --select=E9,F63,F7,F82 --show-source --statistics
-flake8 leetcode --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+make lint
 ```
 
-### Unit tests
+### Unit tests with coverage
 
 For unit tests we will use [pytest](https://docs.pytest.org/en/8.2.x/)
-
-To run all unit-tests execute:
-
-```bash
-pytest
-```
-
-### Code Coverage
-
 For code coverage we will use [coverage]().
 
-To gather code coverage, execute the following script:
+To run all unit-tests with coverage reports execute:
 
 ```bash
-./run_coverage.sh
-```
-
-To view aggregated report as html execute:
-
-```bash
-coverage html
-
-open htmlcov/index.html
+make test
 ```
